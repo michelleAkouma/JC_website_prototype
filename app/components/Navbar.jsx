@@ -25,7 +25,7 @@ const Navbar = () => {
     },
     {
       id: 4,
-      name: "Book a room",
+      name: "Book a rooms",
       href: "/",
       classNames: styles.classNames,
     },
