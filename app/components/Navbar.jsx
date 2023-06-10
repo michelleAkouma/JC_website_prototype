@@ -47,6 +47,7 @@ const Navbar = () => {
               alt=""
             />
           </Link>
+
           <div
             className={`hidden sm:flex space-x-5 ${
               navActive ? "active" : ""
