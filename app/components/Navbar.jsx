@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [navActive, setNavActive] = useState(null);
   const styles = {
     classNames:
-      "font-loryena tracking-[5px] text-base text-light-yellow uppercase",
+      "font-loryena tracking-[5px] text-base text-light-yellow uppercase hover:scale-110 transition ease-in-out delay-150",
   };
   const links = [
     {
@@ -43,7 +47,11 @@ const Navbar = () => {
               alt=""
             />
           </Link>
-          <div className="hidden sm:flex space-x-5">
+          <div
+            className={`hidden sm:flex space-x-5 ${
+              navActive ? "active" : ""
+            } nav_list `}
+          >
             {links.map((links) => (
               <Link href={links.href}>
                 {" "}
@@ -62,12 +70,14 @@ const Navbar = () => {
             >
               <span className="w-full dot_in h-[0.2px] bg-light-yellow"></span>
               Book a room
-              <br />
               <span className="w-full dot_in h-[0.2px] bg-light-yellow"></span>
             </Link>
           </div>
 
-          <div className="btn space-y-1 block sm:hidden">
+          <div
+            className="btn space-y-1 block sm:hidden"
+            onClick={() => setNavActive(!navActive)}
+          >
             <div className="w-7 h-0.5 bg-light-yellow"></div>
             <div className="w-7 h-0.5 bg-light-yellow"></div>
           </div>

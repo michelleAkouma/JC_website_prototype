@@ -85,3 +85,54 @@
   border-radius: 100%;
   background: #f8f6d6;
 }
+
+.dot_in_in {
+  position: relative;
+  display: inline-block;
+}
+
+.dot_in_in::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -8px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background: #232322;
+}
+.dot_in_in::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -8px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background: #202020;
+}
+
+.nav__menu-list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  width: 288px;
+  row-gap: 24px;
+  right: -288px;
+  padding: 24px 16px;
+  transition: all 0.2s;
+  min-height: calc(100vh - 60px);
+  background-color: #f1f1f1;
+}
+
+.nav__menu-list.active {
+  right: 0;
+}
+
+.overlay-close {
+  visibility: visible;
+  left: 0;
+}
